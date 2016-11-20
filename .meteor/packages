@@ -20,8 +20,8 @@ accounts-password
 accounts-base
 check
 audit-argument-checks
-browser-policy
-
+#browser-policy
+email
 fourseven:scss
 aldeed:collection2
 alanning:roles
@@ -33,3 +33,11 @@ xolvio:backdoor
 mdg:validated-method
 dburles:factory@1.0.0
 ddp-rate-limiter
+
+
+
+#WP
+okgrow:rest2ddp
+momentjs:moment
+themeteorchef:commonmark
+meteortoys:allthings

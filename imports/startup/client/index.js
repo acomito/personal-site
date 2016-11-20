@@ -9,6 +9,9 @@ Bert.defaults.style = 'growl-top-right';
 // sets up the collections to be used from wordpress. add more as needed. then add config in imports/startup/server/rest2dpp
 export const WordpressPosts = new Mongo.Collection('wordpressPosts');
 export const WordpressImages = new Mongo.Collection('wordpressImages');
+export const MediumPosts = new Mongo.Collection('mediumPosts');
+
+
 
 // needed for material-ui
 injectTapEventPlugin();

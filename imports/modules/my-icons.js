@@ -1,20 +1,7 @@
 import React from 'react';
-import 'flexboxgrid';
 import IconButton from 'material-ui/IconButton';
-import {Card, CardActions, CardHeader, CardTitle, CardMedia, CardText} from 'material-ui/Card';
 
-styles={
-	raisedButtons: {
-		width: "300px",
-		margin: "30px 10px 10px 10px"
-	},
-	containerDiv: {
-		margin: "100px",
-	}
-}
-
-
-const LinkedinIcon = () => {
+export const LinkedinIcon = ({props}) => {
 	return <IconButton 
 				href="https://www.linkedin.com/in/comito" 
 				tooltip="linkedin"
@@ -26,7 +13,7 @@ const LinkedinIcon = () => {
 			    <desc>Created with Sketch.</desc>
 			    <defs>
 			        <circle id="path-1" cx="22" cy="22" r="22"></circle>
-			        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="44" height="44" style={{fill:"black"}} >
+			        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="44" height="44" style={{fill: this.props.fill}} >
 			            <use xlinkHref="#path-1"></use>
 			        </mask>
 			    </defs>
@@ -44,14 +31,14 @@ const LinkedinIcon = () => {
 }
 
 
-const GitHubIcon = () => {
+export const GitHubIcon = ({props}) => {
 	return <a href="https://github.com/acomito" target="_blank">
 				<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
 				    <title>github</title>
 				    <desc>Created with Sketch.</desc>
 				    <defs>
 				        <circle id="path-1" cx="22" cy="22" r="22"></circle>
-				        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="44" height="44" style={{fill:"black"}} >
+				        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="44" height="44"  style={{fill: this.props.fill}} >
 				            <use xlinkHref="#path-1"></use>
 				        </mask>
 				    </defs>
@@ -70,13 +57,13 @@ const GitHubIcon = () => {
 }
 
 
-const TwitterIcon = () => {
+export const TwitterIcon = ({props}) => {
 	return <svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
 				    <title>twitter</title>
 				    <desc>Created with Sketch.</desc>
 				    <defs>
 				        <circle id="path-1" cx="22" cy="22" r="22"></circle>
-				        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="44" height="44" style={{fill:"black"}}>
+				        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="44" height="44"  style={{fill: this.props.fill}}>
 				            <use xlinkHref="#path-1"></use>
 				        </mask>
 				    </defs>
@@ -92,18 +79,3 @@ const TwitterIcon = () => {
 				    </g>
 				</svg>
 }
-
-export const Contact = () => (
-  <div className="row center-xs middle-xs" style={styles.containerDiv}>
-		  <div className="box">
-		  <Card style={{backgroundColor: "#FF6E40", width: "50%"}}>
-		  	<CardHeader titleStyle={{color: "#FFFFFF", textAlign: "center"}} title="Contact Me" />
-		  	<CardText>
-		  	<div className="row">
-
-		  	</div>
-		  	</CardText>
-		  </Card>
-		  </div>
-  </div>
-);

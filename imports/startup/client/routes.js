@@ -8,6 +8,8 @@ import { Index } from '../../ui/pages/index';
 import { WordpressPostsPage } from '../../ui/pages/wordpressPosts';
 import { About } from '../../ui/pages/about';
 import { Contact } from '../../ui/pages/contact';
+import { Portfolio } from '../../ui/pages/portfolio';
+import { OpenSource } from '../../ui/pages/open-source';
 import { NotFound } from '../../ui/pages/not-found';
 
 //Theme
@@ -27,6 +29,8 @@ Meteor.startup(() => {
         <Route name="posts" path="/posts" component={ WordpressPostsPage } />
         <Route name="about" path="/about" component={ About } />
         <Route name="contact" path="/contact" component={ Contact } />
+        <Route name="portfolio" path="/portfolio" component={ Portfolio } />
+        <Route name="open-source" path="/open-source" component={ OpenSource } />
         <Route path="*" component={ NotFound } />
       </Route>
     </Router>

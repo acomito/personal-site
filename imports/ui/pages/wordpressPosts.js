@@ -1,9 +1,8 @@
 import React from 'react';
-import WordpressPosts from '../containers/wordpressPost-container';
-
+import { BlogPosts } from '../components/blog-posts'
 
 export const WordpressPostsPage = () => (
   <div>
-  	<WordpressPosts />
+  	<BlogPosts />
   </div>
 );

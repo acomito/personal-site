@@ -5,8 +5,10 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 export const muiTheme = getMuiTheme({
   palette: {
- /*    primary1Color: '#009688',
-    primary2Color: '#00796B',
+    primary1Color: '#009688',
+    accent1Color: '#FF6E40',
+    textColor: '#424242'
+  /*   primary2Color: '#00796B',
     accent1Color: '#FF6E40',
     primary3Color: grey400,
     accent1Color: pinkA200,

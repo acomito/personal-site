@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 import IconButton from 'material-ui/IconButton';
 import { SideNav } from './side-nav'
+import Avatar from 'material-ui/Avatar';
+import { returnActiveLink } from '../../modules/activeLink-Helper';
 
 const styles = {
   AppNavigation: {
@@ -12,27 +14,30 @@ const styles = {
   },
   titleLink: {
     textDecoration: "none",
-    color: "#ffffff"
+    color: "#ffffff",
+    cursor: "pointer"
   },
   navLink: {
     color: "#ffffff"
   }
 }
 
-const NavLinks = function(){
+/*const returnColor = function(currentPath, linkName){
+  if (currentPath === linkName) {  return {color: "#B2DFDB"}; }
+    return {color: "#FFFFFF"};
+};*/
+
+const NavLinks = function({currentPath}){
   return  <div className="navLinks">
-            <Link to="/" >
-              <FlatButton style={styles.navLink} label="Home" />
+             <Link to="/portfolio" >
+              <FlatButton labelStyle={returnActiveLink(currentPath, '/portfolio')} label="Portfolio" />
             </Link>
-            <Link to="/about" >
-              <FlatButton style={styles.navLink} label="About" />
+             <Link to="/open-source" >
+              <FlatButton labelStyle={returnActiveLink(currentPath, '/open-source')} style={styles.navLink} label="Open Source" />
             </Link>
-            <Link to="/posts" >
-              <FlatButton style={styles.navLink} label="Blog" />
-            </Link>
-            <Link to="/contact"  >
-              <FlatButton style={styles.navLink} label="Contact" />
-            </Link>
+            <a href="https://blog.anthonycomito.com/" >
+              <FlatButton labelStyle={returnActiveLink(currentPath, '/posts')} style={styles.navLink} label="Blog" />
+            </a>
           </div>
 };
 
@@ -45,6 +50,7 @@ export class AppNavigation extends React.Component {
     this.state = {open: false};
   }
 
+
   handleToggle() {
     this.setState({open: !this.state.open});
   }
@@ -54,16 +60,25 @@ export class AppNavigation extends React.Component {
   } 
 
   render() {
+    const currentPath = this.props.currentPath;
     return <div>
-            <AppBar
-              title={<Link to="/" style={styles.titleLink}>Company Logo</Link>}
-              zDepth={0}
-              style={styles.AppNavigation}
-              iconElementRight={<NavLinks className="navLinks" />}
-              onLeftIconButtonTouchTap={this.handleToggle}
-            />
-            <SideNav isOpen={this.state.open} close={this.handleClose}/>
-            </div>
+                <AppBar
+                  title={this.props.currentPath === '/' 
+                        ? '' 
+                        : <Link to="/" style={styles.titleLink} currentPath={currentPath}>
+                            <Avatar color={"#009688"} backgroundColor={"#FAFAFA"} size={48} > AC </Avatar>
+                          </Link>
+                  }
+                  zDepth={this.props.currentPath === '/' ? 0 : 2}
+                  style={styles.AppNavigation}
+                  iconElementRight={<NavLinks currentPath={currentPath} className="navLinks" />}
+                  iconElementLeft={<IconButton onClick={this.handleToggle}><Menu className="mobileNav" color={"#FFFFFF"} /></IconButton>}
+                  
+
+                />
+                <SideNav isOpen={this.state.open} close={this.handleClose} currentPath={currentPath}/>
+          </div>
+            
   }
 }
 

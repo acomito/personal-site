@@ -8,7 +8,7 @@
     "chimp-watch": "chimp --ddp=http://localhost:3000 --watch --mocha --path=tests",
     "chimp-test": "chimp --ddp=http://localhost:3000 --mocha --path=tests",
     "staging": "meteor deploy staging.meteor.com --settings settings-development.json",
-    "production": "meteor deploy production.meteor.com --settings settings-production.json"
+    "production": "meteor deploy growlab-dev.meteorapp.com --settings settings-production.json"
   },
   "devDependencies": {
     "chimp": "^0.34.1",
@@ -63,14 +63,18 @@
     "flexboxgrid": "^6.3.0",
     "formsy-material-ui": "^0.4.3",
     "formsy-react": "^0.18.1",
+    "gsap": "^1.19.0",
     "jquery": "^2.2.4",
     "jquery-validation": "^1.15.0",
     "material-ui": "^0.15.2",
+    "prismjs": "^1.5.1",
     "react": "^15.2.0",
     "react-addons-pure-render-mixin": "^15.0.2",
+    "react-addons-transition-group": "^15.2.1",
     "react-bootstrap": "^0.29.5",
     "react-dom": "^15.2.0",
     "react-easy-transition": "0.0.5",
+    "react-html-email": "^1.1.1",
     "react-komposer": "^1.8.0",
     "react-router": "^2.5.2",
     "react-router-bootstrap": "^0.23.0",

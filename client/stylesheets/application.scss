@@ -9,13 +9,34 @@
 @import "state/navbar";
 
 
+
+
 html, body {
-  /* font-family: 'Roboto', sans-serif; */
   background: #FAFAFA !important;
-  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
+
 }
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+
+.align-middle > * {
+  vertical-align: middle;
+}
+
+
+/* #react-root,
+#app-wrapper {
+  height: 100%;
+} */
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
@@ -26,15 +47,45 @@ a {
 	text-decoration: none;
 }
 
-.navLinks {
-	@media screen and (max-width: 620px) {
-    	display: none !important;
-  	}
+
+
+.shadowHover {
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
 }
 
+
+// show/hide normal menu vs mobile drawer menu
+.navLinks {
+  @media screen and (max-width: 620px) {
+      display: none !important;
+    }
+}
+
+// show/hide normal menu vs mobile drawer menu
 .mobileNav {
-	color: #fff;
-	@media screen and (min-width: 620px) {
-    	display: none !important;
-  	}
+  color: #fff;
+  @media screen and (min-width: 620px) {
+      display: none !important;
+    }
+}
+
+
+
+.portfolio-image {
+
+  @media screen and (min-width: 620px) {
+      height: 320px;
+  }
+
+  @media screen and (max-width: 620px) {
+       height: 200px;
+  }
+
+  @media screen and (max-width: 420px) {
+       height: 150px;
+  }
+
+
 }

@@ -5,11 +5,18 @@ import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import { Link } from 'react-router';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import { createMarkup } from '../../modules/markdown-helpers.js';
 import { TweenMax } from 'gsap';
+import Chip from 'material-ui/Chip';
 
+const styles = {
+	chipStyles: {
+		display: "inline-block",
+		margin: "5px",
+		padding: "2px 5px"
+	}
+};
 
-export class IndividualWordpressPost extends React.Component {
+export class IndividualOpenSourceItem extends React.Component {
 
 	 constructor(props) {
 	    super(props);   
@@ -24,12 +31,16 @@ export class IndividualWordpressPost extends React.Component {
 		const { document, handleClose } = this.props;
 
 		return 	<div>
-					<RaisedButton label="Back to Posts" onClick={handleClose}/>
+					<RaisedButton label="Back to Projects" onClick={handleClose}/>
 					<Card key={ document.id }>
-					    <CardHeader title={document.title.rendered} />
+					    <CardHeader title={document.title} />
 					    <CardText>
-					    	<div dangerouslySetInnerHTML={createMarkup(document.content.rendered)} />  
+					    {document.description}
 					    </CardText>
+					    {document.tags.map(function(tag){
+					    	return <Chip style={styles.chipStyles} key={tag}> {tag} </Chip>
+					    })}
+					    
 					</Card>
 				 </div>
 	}
